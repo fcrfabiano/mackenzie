@@ -4,12 +4,15 @@
 # Observe que as quantidades calculadas devem ser um número inteiro, portanto, o resultado da quantidade de convites deve ser arredondada para cima, usando a função matemática apropriada em Python. 
 import math
 
-def calcConvites (totalEspetaculo, precoConvite):
-    total = totalEspetaculo / precoConvite
-    return total
-
-def calcLucro (totalEspetaculo, precoConvite):
-    total = (totalEspetaculo / 0.77) / precoConvite
+def calcConvites (precoEspetaculo, precoConvite):
+    total = precoEspetaculo / precoConvite
     return math.ceil(total)
 
-print(calcLucro(100000, 10))
+def calcLucro (precoEspetaculo, precoConvite):
+    total = 1.23 * precoEspetaculo / precoConvite
+    return math.ceil(total)
+
+espetaculo = float(input('Preço do espetáculo:'))
+convite = float(input('Preço do convite:'))
+print('Custo do espetáculo: ', calcConvites(espetaculo, convite))
+print('Lucro de 23%: ', calcLucro(espetaculo, convite))
